@@ -11,3 +11,8 @@ def test_parse_remove():
 def test_parse_set_done():
     result = Parser.parse("x 1")
     assert result == "setting the status of task 1 to done"
+
+def test_parse_set_to_do():
+    result = Parser.parse("o 1")
+    assert result == "setting the status of task 1 to to do"
+
