@@ -25,3 +25,7 @@ class Tasklist:
     def addTask(self,task):
         self.tasks.append([task,""])
         return
+
+    def removeTask(self,taskID):
+        self.tasks.pop(taskID-1)
+        return

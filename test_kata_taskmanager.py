@@ -40,3 +40,11 @@ def test_parse_update_add():
 
     result = tasks.getTasks()
     assert result == [["Learn Python",""]]
+
+def test_update_remove():
+    tasks = Tasklist()
+    tasks.addTask("Learn Python")
+    tasks.removeTask(1)
+    result = tasks.getTasks()
+
+    assert result == []
