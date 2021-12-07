@@ -13,6 +13,7 @@ def test_parse_remove():
 
 def test_parse_set_done():
     tasks = Tasklist()
+    tasks.addTask("Learn Python")
     result = Parser.parse("x 1", tasks)
     assert result == "setting the status of task 1 to done"
 
@@ -62,6 +63,14 @@ def test_update_status_done():
     tasks = Tasklist()
     tasks.addTask("Learn Python")
     tasks.updateTaskDone(1)
+    result = tasks.getTasks()
+
+    assert result == [["Learn Python","done"]]
+
+def test_parse_update_status_done():
+    tasks = Tasklist()
+    tasks.addTask("Learn Python")
+    Parser.parse("x 1",tasks)
     result = tasks.getTasks()
 
     assert result == [["Learn Python","done"]]

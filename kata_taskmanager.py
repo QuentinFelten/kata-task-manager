@@ -9,6 +9,7 @@ class Parser:
             tasks.removeTask(int(args[1]))
             return "removing task number " + args[1]
         elif (args[0] == "x" and args[1].isdigit()):
+            tasks.updateTaskDone(int(args[1]))
             return "setting the status of task " + args[1] + " to done"
         elif (args[0] == "o" and args[1].isdigit()):
             return "setting the status of task " + args[1] + " to to do"
