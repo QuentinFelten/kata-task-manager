@@ -1,23 +1,28 @@
 from kata_taskmanager import *
 
 def test_parse_add():
-    result = Parser.parse("+ Learn Python")
+    tasks = Tasklist()
+    result = Parser.parse("+ Learn Python", tasks)
     assert result == "adding task : Learn Python"
 
 def test_parse_remove():
-    result = Parser.parse("- 1")
+    tasks = Tasklist()
+    result = Parser.parse("- 1", tasks)
     assert result == "removing task number 1"
 
 def test_parse_set_done():
-    result = Parser.parse("x 1")
+    tasks = Tasklist()
+    result = Parser.parse("x 1", tasks)
     assert result == "setting the status of task 1 to done"
 
 def test_parse_set_to_do():
-    result = Parser.parse("o 1")
+    tasks = Tasklist()
+    result = Parser.parse("o 1", tasks)
     assert result == "setting the status of task 1 to to do"
 
 def test_parsing_error():
-    result = Parser.parse("x 7!")
+    tasks = Tasklist()
+    result = Parser.parse("x 7!", tasks)
     assert result == "parsing error"
 
 # Step 2 : update list 
@@ -27,4 +32,11 @@ def test_update_add():
     tasks.addTask("Learn Python")
     result = tasks.getTasks()
 
+    assert result == [["Learn Python",""]]
+
+def test_parse_update_add():
+    tasks = Tasklist()
+    Parser.parse("+ Learn Python", tasks)
+
+    result = tasks.getTasks()
     assert result == [["Learn Python",""]]

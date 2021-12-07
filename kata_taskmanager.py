@@ -1,8 +1,9 @@
 class Parser:
 
-    def parse(query):
+    def parse(query,tasks):
         args = query.split(" ",1)
         if (args[0] == "+" and args[1]):
+            tasks.addTask(args[1])
             return "adding task : " + args[1]
         elif (args[0] == "-" and args[1].isdigit()):
             return "removing task number " + args[1]
