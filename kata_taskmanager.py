@@ -1,17 +1,8 @@
-class Tasklist:
-    
-    tasks = []
+class Parser:
 
-    def __init__(self):
-        self.tasks = []
-
-    def parse(self, query):
+    def parse(query):
         args = query.split(" ",1)
-        if (args[0] == "+" ):
-            self.tasks.append([args[1],""])
-        elif (args[0] == "-" and args[1].isdigit()):
-            self.tasks.pop(int(args[1])-1)
-        
-    
-    def getTasks(self):
-        return self.tasks
+        if(args[0] == "+" and args[1]):
+            return "adding task : " + args[1]
+        else:
+            return "parsing error"

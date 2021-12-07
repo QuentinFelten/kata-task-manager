@@ -1,19 +1,6 @@
-from kata_taskmanager import Tasklist
+from kata_taskmanager import *
 
+def test_parse_add():
+    result = Parser.parse("+ Learn Python")
+    assert result == "adding task : Learn Python"
 
-def test_add_task():
-    query = "+ Learn Python"
-    tasks = Tasklist()
-    tasks.parse(query)
-
-    assert tasks.getTasks() == [["Learn Python", ""]]
-
-
-def test_remove_task():
-    query = "- 1"
-    tasks = Tasklist()
-    print(tasks.getTasks())
-    tasks.parse("+ Learn Python")
-    tasks.parse(query)
-
-    assert tasks.getTasks() == []
