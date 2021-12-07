@@ -16,3 +16,6 @@ def test_parse_set_to_do():
     result = Parser.parse("o 1")
     assert result == "setting the status of task 1 to to do"
 
+def test_parsing_error():
+    result = Parser.parse("x 7!")
+    assert result == "parsing error"
