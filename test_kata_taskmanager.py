@@ -7,6 +7,7 @@ def test_parse_add():
 
 def test_parse_remove():
     tasks = Tasklist()
+    tasks.addTask("Learn Python")
     result = Parser.parse("- 1", tasks)
     assert result == "removing task number 1"
 
@@ -45,6 +46,14 @@ def test_update_remove():
     tasks = Tasklist()
     tasks.addTask("Learn Python")
     tasks.removeTask(1)
+    result = tasks.getTasks()
+
+    assert result == []
+
+def test_parse_update_remove():
+    tasks = Tasklist()
+    tasks.addTask("Learn Python")
+    Parser.parse("- 1", tasks)
     result = tasks.getTasks()
 
     assert result == []
