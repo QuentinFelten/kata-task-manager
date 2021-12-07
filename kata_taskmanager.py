@@ -12,6 +12,7 @@ class Parser:
             tasks.updateTaskDone(int(args[1]))
             return "setting the status of task " + args[1] + " to done"
         elif (args[0] == "o" and args[1].isdigit()):
+            tasks.updateTaskToDo(int(args[1]))
             return "setting the status of task " + args[1] + " to to do"
         else:
             return "parsing error"

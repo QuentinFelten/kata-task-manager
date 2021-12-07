@@ -19,6 +19,7 @@ def test_parse_set_done():
 
 def test_parse_set_to_do():
     tasks = Tasklist()
+    tasks.addTask("Learn Python")
     result = Parser.parse("o 1", tasks)
     assert result == "setting the status of task 1 to to do"
 
@@ -83,4 +84,10 @@ def test_update_status_to_do():
 
     assert result == [["Learn Python", "to do"]]
 
-    
+def test_parse_update_status_to_do():
+    tasks = Tasklist()
+    tasks.addTask("Learn Python")
+    Parser.parse("o 1", tasks)
+    result = tasks.getTasks()
+
+    assert result == [["Learn Python","to do"]]
