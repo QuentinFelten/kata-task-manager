@@ -57,3 +57,12 @@ def test_parse_update_remove():
     result = tasks.getTasks()
 
     assert result == []
+
+def test_update_status_done():
+    tasks = Tasklist()
+    tasks.addTask("Learn Python")
+    tasks.updateTaskDone(1)
+    result = tasks.getTasks()
+
+    assert result == [["Learn Python","done"]]
+

@@ -30,3 +30,7 @@ class Tasklist:
     def removeTask(self,taskID):
         self.tasks.pop(taskID-1)
         return
+
+    def updateTaskDone(self,taskID):
+        self.tasks[taskID-1][1]="done"
+        return
