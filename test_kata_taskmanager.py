@@ -75,3 +75,12 @@ def test_parse_update_status_done():
 
     assert result == [["Learn Python","done"]]
 
+def test_update_status_to_do():
+    tasks = Tasklist()
+    tasks.addTask("Learn Python")
+    tasks.updateTaskToDo(1)
+    result = tasks.getTasks()
+
+    assert result == [["Learn Python", "to do"]]
+
+    

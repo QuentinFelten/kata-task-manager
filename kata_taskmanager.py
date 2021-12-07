@@ -35,3 +35,7 @@ class Tasklist:
     def updateTaskDone(self,taskID):
         self.tasks[taskID-1][1]="done"
         return
+
+    def updateTaskToDo(self, taskID):
+        self.tasks[taskID-1][1]="to do"
+        return
