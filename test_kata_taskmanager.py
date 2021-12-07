@@ -7,3 +7,7 @@ def test_parse_add():
 def test_parse_remove():
     result = Parser.parse("- 1")
     assert result == "removing task number 1"
+
+def test_parse_set_done():
+    result = Parser.parse("x 1")
+    assert result == "setting the status of task 1 to done"
