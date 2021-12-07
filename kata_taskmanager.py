@@ -12,3 +12,15 @@ class Parser:
             return "setting the status of task " + args[1] + " to to do"
         else:
             return "parsing error"
+
+class Tasklist:
+
+    def __init__(self):
+        self.tasks = []
+
+    def getTasks(self):
+        return self.tasks
+
+    def addTask(self,task):
+        self.tasks.append([task,""])
+        return

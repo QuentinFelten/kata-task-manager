@@ -19,3 +19,12 @@ def test_parse_set_to_do():
 def test_parsing_error():
     result = Parser.parse("x 7!")
     assert result == "parsing error"
+
+# Step 2 : update list 
+
+def test_update_add():
+    tasks = Tasklist()
+    tasks.addTask("Learn Python")
+    result = tasks.getTasks()
+
+    assert result == [["Learn Python",""]]
