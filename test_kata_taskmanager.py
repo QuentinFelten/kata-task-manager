@@ -7,3 +7,13 @@ def test_add_task():
     tasks.parse(query)
 
     assert tasks.getTasks() == [["Learn Python", ""]]
+
+
+def test_remove_task():
+    query = "- 1"
+    tasks = Tasklist()
+    print(tasks.getTasks())
+    tasks.parse("+ Learn Python")
+    tasks.parse(query)
+
+    assert tasks.getTasks() == []
